@@ -18,7 +18,7 @@ const attendence_model = require('../models/attendence_model');
 
 const adminLogin = (req, res) => {
 
-    res.render('../views/admin-login')
+    res.render('../Views/admin-login')
 
 }
 
@@ -61,7 +61,7 @@ const adminLoginpost = async (req, res) => {
 
 const adminSignup = (req, res) => {
 
-    res.render('../views/admin-signup')
+    res.render('../Views/admin-signup')
 
 }
 
@@ -110,7 +110,7 @@ const adminDsahboard = async (req, res) => {
     const leave = await leave_model.find();
     const totalLeave = leave.length;
 
-    res.render('../views/admin-dashboard', { adminSourse, leave, totalEmployees, totalDepartment, totalLeave })
+    res.render('../Views/admin-dashboard', { adminSourse, leave, totalEmployees, totalDepartment, totalLeave })
 
 }
 
@@ -125,7 +125,7 @@ const addEmployee = async (req, res) => {
 
     const adminID = req.adminId;
     const adminSourse = await admin_model.findById(adminID).populate('Department')
-    res.render('../views/add-employee', { adminSourse })
+    res.render('../Views/add-employee', { adminSourse })
 }
 
 const addEmployeePost = async (req, res) => {
@@ -177,7 +177,7 @@ const editEmployee = async (req, res) => {
     const editEmployee = await Employee_Model.findById(req.params.id);
     const department = await department_model.find();
 
-    res.render('../views/edit-employee', { editEmployee, department, })
+    res.render('../Views/edit-employee', { editEmployee, department, })
 
 }
 
@@ -197,7 +197,7 @@ const editEmployeePost = async (req, res) => {
 
 const addDepartment = (req, res) => {
 
-    res.render('../views/add-department')
+    res.render('../Views/add-department')
 }
 
 const addDepartmentPost = async (req, res) => {
@@ -228,7 +228,7 @@ const editDepartment = async (req, res) => {
 
     const departmentSourse = await department_model.findById(req.params.id)
 
-    res.render('../views/edit-department', { departmentSourse })
+    res.render('../Views/edit-department', { departmentSourse })
 
 }
 
@@ -246,7 +246,7 @@ const addSalary = async (req, res) => {
     const department = await department_model.find();
     const employees = await Employee_Model.find();
 
-    res.render('../views/add-salary', { department, employees })
+    res.render('../Views/add-salary', { department, employees })
 }
 
 const addSalaryPost = async (req, res) => {
@@ -301,7 +301,7 @@ const employeeSalary = async (req, res) => {
 
     const employeeSourse = await Employee_Model.findById(req.params.id).populate('Payment')
 
-    res.render('../views/salery-page', { employeeSourse })
+    res.render('../Views/salery-page', { employeeSourse })
 }
 
 const acceptLeave = async (req, res) => {
@@ -378,7 +378,7 @@ const addTask = async (req, res) => {
     const departments = await department_model.find();
     const employees = await Employee_Model.find();
 
-    res.render('../views/add-task', { departments, employees })
+    res.render('../Views/add-task', { departments, employees })
 
 }
 
@@ -430,7 +430,7 @@ const employeeAttendence = async (req, res) => {
 
     const employeeSourse = await Employee_Model.findById(req.params.id).populate('Attendence')
 
-    res.render('../views/employee-attendence', { employeeSourse })
+    res.render('../Views/employee-attendence', { employeeSourse })
 
 }
 
@@ -458,7 +458,7 @@ const newAttendencePost = async (req, res) => {
 
 const forgetPassword = (req, res) => {
 
-    res.render('../views/forget-password')
+    res.render('../Views/forget-password')
 
 }
 
@@ -508,7 +508,7 @@ const forgetPasswordPost = async (req, res) => {
 
 const resetPassword = (req, res) => {
 
-    res.render('../views/reset-password')
+    res.render('../Views/reset-password')
 }
 
 const resetPasswordPost = async (req, res) => {
@@ -537,7 +537,7 @@ const resetPasswordPost = async (req, res) => {
 
 const EmailNotFound = (req, res) => {
 
-    res.render('../views/email-not-found.ejs')
+    res.render('../Views/email-not-found.ejs')
 
 }
 
@@ -554,7 +554,7 @@ const editAdminprofile = async (req, res) => {
 
     const adminSourse = await admin_model.findById(req.params.id)
 
-    res.render('../views/edit-admin-profile', { adminSourse })
+    res.render('../Views/edit-admin-profile', { adminSourse })
 
 }
 
