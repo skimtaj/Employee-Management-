@@ -74,7 +74,7 @@ const leaveRequest = async (req, res) => {
     const department = await department_model.find();
     const employees = await Employee_Model.find();
 
-    res.render('../views/leave-form', { department, employees })
+    res.render('../Views/leave-form', { department, employees })
 }
 
 const leaveRequestPost = async (req, res) => {
@@ -126,7 +126,7 @@ const viewTask = async (req, res) => {
 
     const taskSourse = await task_model.findById(req.params.id);
 
-    res.render('../views/task-view', { taskSourse })
+    res.render('../Views/task-view', { taskSourse })
 
 }
 
