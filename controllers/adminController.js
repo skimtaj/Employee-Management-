@@ -546,7 +546,7 @@ const adminProfile = async (req, res) => {
     const adminID = req.adminId;
     const adminSourse = await admin_model.findById(adminID)
 
-    res.render('../views/admin-profile', { adminSourse })
+    res.render('../Views/admin-profile', { adminSourse })
 
 }
 
